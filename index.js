@@ -25,6 +25,7 @@ Array.from(buttons).forEach((button) => {
     } catch {
       result = "Invalid Input";
       inputBar.value = result;
+      result = "";
     }
   });
 });
