@@ -66,6 +66,7 @@ body {
   /* background-color: rgba(101, 105, 107, 0.397); */
   color: var(--primary-blue);
   width: 245px;
+  text-align: center;
 }
 
 .larger {
