@@ -7,13 +7,13 @@ Array.from(buttons).forEach((button) => {
     let operandOrOperator = e.target.innerHTML;
     try {
       if (operandOrOperator === "=") {
-        result = eval(result);
+        result = eval(result) ?? "";
         inputBar.value = result;
       } else if (operandOrOperator === "C") {
         result = " ";
         inputBar.value = result;
       } else if (operandOrOperator === "⌫") {
-        result = result.substring(0, result.length - 1);
+        result = result.slice(0, -1);
         inputBar.value = result;
       } else if (operandOrOperator === "^") {
         result += e.target.value;
@@ -26,6 +26,10 @@ Array.from(buttons).forEach((button) => {
       result = "Invalid Input";
       inputBar.value = result;
       result = "";
+      if (operandOrOperator === "⌫") {
+        result = result.slice(0, -1);
+        inputBar.value = result;
+      }
     }
   });
 });
